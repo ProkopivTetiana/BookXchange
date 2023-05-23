@@ -1,0 +1,28 @@
+package com.bookxchange.service.impl;
+
+import com.bookxchange.dto.UserDTO;
+import com.bookxchange.exception.EntityNotExistsException;
+import com.bookxchange.mapper.UserMapper;
+import com.bookxchange.repository.UserRepository;
+import com.bookxchange.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
+
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository,
+                           UserMapper userMapper) {
+        this.userRepository = userRepository;
+        this.userMapper = userMapper;
+    }
+
+    @Override
+    public UserDTO getUserByEmail(String email) {
+        return userMapper.entityToDto(userRepository.findByEmail(email).orElseThrow(EntityNotExistsException::new));
+    }
+}
