@@ -1,6 +1,8 @@
 package com.bookxchange.service.impl;
 
+import com.bookxchange.dto.AdvertisementDTO;
 import com.bookxchange.dto.UserDTO;
+import com.bookxchange.dto.UserSaveDTO;
 import com.bookxchange.exception.EntityNotExistsException;
 import com.bookxchange.mapper.UserMapper;
 import com.bookxchange.repository.UserRepository;
@@ -25,4 +27,14 @@ public class UserServiceImpl implements UserService {
     public UserDTO getUserByEmail(String email) {
         return userMapper.entityToDto(userRepository.findByEmail(email).orElseThrow(EntityNotExistsException::new));
     }
+
+    @Override
+    public UserSaveDTO updateUser(UserSaveDTO userSaveDTO) {
+        return userRepository.findByEmail(userSaveDTO.getEmail())
+                .map(user -> {
+                    userMapper.updateUser(user, userSaveDTO);
+                    return userMapper.entityToSaveDto(userRepository.save(user));
+                }).orElseThrow(EntityNotExistsException::new);
+    }
+
 }

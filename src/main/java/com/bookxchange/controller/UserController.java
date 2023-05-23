@@ -1,6 +1,7 @@
 package com.bookxchange.controller;
 
 import com.bookxchange.dto.UserDTO;
+import com.bookxchange.dto.UserSaveDTO;
 import com.bookxchange.mapper.UserMapper;
 import com.bookxchange.model.User;
 import com.bookxchange.service.UserService;
@@ -11,9 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.Optional;
@@ -34,5 +33,12 @@ public class UserController {
     public ResponseEntity<UserDTO> getUser(@NotNull Principal principal) {
         UserDTO userDTO = userService.getUserByEmail(principal.getName());
         return ResponseEntity.status(HttpStatus.OK).body(userDTO);
+    }
+
+    @PutMapping(path = "/profile")
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
+    public ResponseEntity<UserSaveDTO> updateUser(UserSaveDTO userSaveDTO) {
+        UserSaveDTO user = userService.updateUser(userSaveDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 }

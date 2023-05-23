@@ -52,6 +52,9 @@ public class User implements UserDetails {
     @NameConstraint
     private String lastName;
 
+    @Column(name = "contact_info", nullable = false)
+    private String contactInfo;
+
     @Column(name = "email", nullable = false, unique = true)
     @EmailConstraint
     private String email;

@@ -23,6 +23,7 @@ public class UserDTO {
     private Boolean isActive;
     private LocalDateTime createDateTime;
     private LocalDateTime updateDateTime;
+    private String contactInfo;
 
     public UserDTO(String firstName,
                    String lastName,
