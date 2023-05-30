@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private static final String USER_NOT_FOUND_MSG =
-            "Incorrect user ID or password. Try again";
+            "User not found. Try again";
     private final UserRepository userRepository;
 
     @Autowired
