@@ -1,6 +1,5 @@
 package com.bookxchange.service.impl;
 
-import com.bookxchange.dto.AdvertisementDTO;
 import com.bookxchange.dto.UserDTO;
 import com.bookxchange.dto.UserSaveDTO;
 import com.bookxchange.exception.EntityNotExistsException;

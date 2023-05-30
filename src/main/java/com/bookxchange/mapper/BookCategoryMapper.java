@@ -17,5 +17,5 @@ public interface BookCategoryMapper {
     @Mapping(target = "category.id", source = "categoryId")
     @Mapping(target = "book.id", source = "bookId")
     void updateBookCategory(@MappingTarget BookCategory bookFromDB,
-                                 BookCategoryDTO newBookCategory);
+                            BookCategoryDTO newBookCategory);
 }

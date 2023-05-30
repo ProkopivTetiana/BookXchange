@@ -3,7 +3,6 @@ package com.bookxchange.mapper;
 import com.bookxchange.dto.AdvertisementDTO;
 import com.bookxchange.dto.AdvertisementSearchDTO;
 import com.bookxchange.model.Advertisement;
-import com.bookxchange.service.AdvertisementService;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -25,7 +24,7 @@ public interface AdvertisementMapper {
     @Mapping(target = "book.id", source = "bookId")
     @Mapping(target = "user.id", source = "userId")
     void updateAdvertisement(@MappingTarget Advertisement bookFromDB,
-                                 AdvertisementDTO newAdvertisement);
+                             AdvertisementDTO newAdvertisement);
 
     List<Advertisement> dtosSearchToEntities(List<AdvertisementSearchDTO> advertisementSearchDTO);
 

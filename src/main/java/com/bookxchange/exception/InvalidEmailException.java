@@ -1,10 +1,10 @@
 package com.bookxchange.exception;
 
-import java.io.InvalidObjectException;
-
 import com.bookxchange.dto.RegistrationRequestDTO;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.io.InvalidObjectException;
 
 @Getter
 @Setter

@@ -9,7 +9,7 @@ public interface BookCategoryService {
     void deleteBookCategory(String id);
 
     BookCategoryDTO updateBookCategory(BookCategoryDTO newBookCategory,
-                             String id);
+                                       String id);
 
     BookCategoryDTO addNewBookCategory(BookCategoryDTO newBookCategory);
 }

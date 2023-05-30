@@ -1,13 +1,10 @@
 package com.bookxchange.exception.handler;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import org.springframework.http.HttpStatus;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import lombok.Data;
+import java.time.LocalDateTime;
 
 @Data
 class ApiError {

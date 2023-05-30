@@ -1,38 +1,25 @@
 package com.bookxchange.model;
 
-import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-
 import com.bookxchange.validator.EmailConstraint;
 import com.bookxchange.validator.NameConstraint;
+import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Index;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Getter @Setter @ToString @RequiredArgsConstructor
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "USER", indexes = {
         @Index(columnList = "email", name = "user_email_idx")
@@ -69,31 +56,38 @@ public class User implements UserDetails {
     @Column(name = "password_reset_token")
     private String passwordResetToken;
 
-    @Override public Collection<? extends GrantedAuthority> getAuthorities() {
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
-    @Override public String getPassword() {
+    @Override
+    public String getPassword() {
         return password;
     } // todo hide
 
-    @Override public String getUsername() {
+    @Override
+    public String getUsername() {
         return email;
     }
 
-    @Override public boolean isAccountNonExpired() {
+    @Override
+    public boolean isAccountNonExpired() {
         return true;
     }
 
-    @Override public boolean isAccountNonLocked() {
+    @Override
+    public boolean isAccountNonLocked() {
         return true;
     }
 
-    @Override public boolean isCredentialsNonExpired() {
+    @Override
+    public boolean isCredentialsNonExpired() {
         return true;
     }
 
-    @Override public boolean isEnabled() {
+    @Override
+    public boolean isEnabled() {
         return true;
     }
 

@@ -1,10 +1,11 @@
 package com.bookxchange.mapper;
 
-import com.bookxchange.dto.AdvertisementDTO;
 import com.bookxchange.dto.CategoryDTO;
-import com.bookxchange.model.Advertisement;
 import com.bookxchange.model.Category;
-import org.mapstruct.*;
+import org.mapstruct.Builder;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValueCheckStrategy;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface CategoryMapper {
     CategoryDTO entityToDto(Category category);
 
     void updateCategory(@MappingTarget Category categoryFromDB,
-                       CategoryDTO newCategory);
+                        CategoryDTO newCategory);
 
     List<CategoryDTO> entitiesToDtos(List<Category> categories);
 }

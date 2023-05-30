@@ -1,6 +1,5 @@
 package com.bookxchange.dto;
 
-import com.bookxchange.model.Book;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

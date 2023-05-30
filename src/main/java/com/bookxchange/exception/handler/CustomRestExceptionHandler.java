@@ -22,7 +22,7 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EntityNotExistsException.class)
     protected ResponseEntity<Object> handleEntityNotExists(
-        EntityNotExistsException ex) {
+            EntityNotExistsException ex) {
         ApiError apiError = new ApiError(NOT_FOUND);
         apiError.setMessage(ex.getMessage());
         return buildResponseEntity(apiError);
@@ -30,7 +30,7 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(InvalidEntityException.class)
     protected ResponseEntity<Object> handleInvalidEntity(
-        InvalidEntityException ex) {
+            InvalidEntityException ex) {
         ApiError apiError = new ApiError(BAD_REQUEST);
 
         apiError.setMessage(ex.getMessage());

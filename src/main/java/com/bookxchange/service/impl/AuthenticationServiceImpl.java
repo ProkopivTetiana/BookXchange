@@ -14,10 +14,10 @@ import com.bookxchange.service.AuthenticationService;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -32,7 +32,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public AuthenticationResponseDTO register(@NotNull RegistrationRequestDTO request) {
-                UserDTO userDTO =
+        UserDTO userDTO =
                 new UserDTO(
                         request.getFirstName(),
                         request.getLastName(),

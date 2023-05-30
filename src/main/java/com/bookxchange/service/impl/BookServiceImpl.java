@@ -17,7 +17,7 @@ public class BookServiceImpl implements BookService {
 
     @Autowired
     public BookServiceImpl(BookRepository bookRepository,
-                              BookMapper bookMapper) {
+                           BookMapper bookMapper) {
         this.bookRepository = bookRepository;
         this.bookMapper = bookMapper;
     }

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class EmailNotConfirmedException extends IllegalStateException{
+public class EmailNotConfirmedException extends IllegalStateException {
     private static final String EMAIL_NOT_CONFIRMED = "email %s not confirmed";
     private User user;
 

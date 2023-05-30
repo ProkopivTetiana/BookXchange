@@ -1,10 +1,10 @@
 package com.bookxchange.validator;
 
+import org.springframework.stereotype.Service;
+
 import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.springframework.stereotype.Service;
 
 @Service
 public class PasswordValidator implements Predicate<String> {

@@ -1,7 +1,5 @@
 package com.bookxchange.dto;
 
-import java.time.LocalDateTime;
-
 import com.bookxchange.model.Role;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -9,7 +9,7 @@ public interface BookService {
     void deleteBook(String id);
 
     BookDTO updateBook(BookDTO newBook,
-                             String id);
+                       String id);
 
     BookDTO addNewBook(BookDTO newBook);
 }

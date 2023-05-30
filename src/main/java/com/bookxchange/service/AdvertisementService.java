@@ -12,7 +12,7 @@ public interface AdvertisementService {
     void deleteAdvertisement(String id);
 
     AdvertisementDTO updateAdvertisement(AdvertisementDTO newAdvertisement,
-                             String id);
+                                         String id);
 
     AdvertisementDTO addNewAdvertisement(AdvertisementDTO newAdvertisement);
 
