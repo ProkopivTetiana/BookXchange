@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.logging.Logger;
+
 @RestController
 @RequestMapping("api/v1/auth")
 @RequiredArgsConstructor
@@ -22,6 +24,7 @@ public class AuthenticationController {
     @PostMapping("/registration")
     public ResponseEntity<AuthenticationResponseDTO> register(
             @RequestBody RegistrationRequestDTO request) {
+        System.out.println("Register _________________________");
         return ResponseEntity.ok(authenticationService.register(request));
     }
 

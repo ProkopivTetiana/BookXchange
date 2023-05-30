@@ -20,20 +20,20 @@ public class UserDTO {
     private String email;
     private Role role;
     private String password;
-    private Boolean isActive;
-    private LocalDateTime createDateTime;
-    private LocalDateTime updateDateTime;
+    private String repeatPassword;
     private String contactInfo;
 
     public UserDTO(String firstName,
                    String lastName,
                    String email,
                    String password,
+                   String repeatPassword,
                    Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.repeatPassword = repeatPassword;
         this.role = role;
     }
 }

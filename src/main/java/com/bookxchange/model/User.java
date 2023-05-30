@@ -52,7 +52,7 @@ public class User implements UserDetails {
     @NameConstraint
     private String lastName;
 
-    @Column(name = "contact_info", nullable = false)
+    @Column(name = "contact_info")
     private String contactInfo;
 
     @Column(name = "email", nullable = false, unique = true)
@@ -65,16 +65,6 @@ public class User implements UserDetails {
 
     @Column(name = "password", nullable = false)
     private String password;
-
-    @Column(name = "is_active")
-    private Boolean isActive;
-
-    @CreatedDate
-    @Column(name = "create_date_time", nullable = false)
-    private LocalDateTime createDateTime;
-    @LastModifiedDate
-    @Column(name = "update_date_time")
-    private LocalDateTime updateDateTime;
 
     @Column(name = "password_reset_token")
     private String passwordResetToken;

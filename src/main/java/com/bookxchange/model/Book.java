@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 @Getter
@@ -31,4 +32,7 @@ public class Book {
 
     @Column(nullable = false)
     private String description;
+
+    @Column(nullable = false)
+    private String image;
 }

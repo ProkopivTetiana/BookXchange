@@ -30,11 +30,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .orElseThrow(() -> new InternalAuthenticationServiceException(
                         USER_NOT_FOUND_MSG));
 
-        if (user.getIsActive() == null) {
-            throw new InternalAuthenticationServiceException(
-                    USER_NOT_FOUND_MSG);
-        }
-
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getEmail())
                 .password(user.getPassword())
