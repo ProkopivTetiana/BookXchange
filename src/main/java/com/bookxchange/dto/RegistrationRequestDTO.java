@@ -1,5 +1,6 @@
 package com.bookxchange.dto;
 
+import com.bookxchange.model.Role;
 import com.bookxchange.validator.EmailConstraint;
 import com.bookxchange.validator.NameConstraint;
 import com.bookxchange.validator.PasswordConstraint;
@@ -30,4 +31,11 @@ public class RegistrationRequestDTO {
     @NotNull
     @PasswordConstraint
     private String password;
+
+    @NotNull
+    @PasswordConstraint
+    private String repeatPassword;
+
+    @NotNull
+    private Role role;
 }

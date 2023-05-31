@@ -1,5 +1,6 @@
 package com.bookxchange.exception;
 
+import com.bookxchange.dto.RegistrationRequestDTO;
 import com.bookxchange.dto.UserDTO;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,11 +9,11 @@ import lombok.Setter;
 @Setter
 public class EmailAlreadyTakenException extends IllegalStateException {
     private static final String EMAIL_ALREADY_TAKEN = "email already taken";
-    private UserDTO userDTO;
+    private RegistrationRequestDTO registrationRequestDTO;
 
-    public EmailAlreadyTakenException(String message, UserDTO userDTO) {
+    public EmailAlreadyTakenException(String message, RegistrationRequestDTO registrationRequestDTO) {
         super(message.isEmpty() ? EMAIL_ALREADY_TAKEN : message);
-        this.userDTO = userDTO;
+        this.registrationRequestDTO = registrationRequestDTO;
     }
 
     public EmailAlreadyTakenException() {

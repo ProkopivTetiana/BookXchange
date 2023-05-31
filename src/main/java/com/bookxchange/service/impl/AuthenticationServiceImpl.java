@@ -32,31 +32,25 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public AuthenticationResponseDTO register(@NotNull RegistrationRequestDTO request) {
-        UserDTO userDTO =
-                new UserDTO(
-                        request.getFirstName(),
-                        request.getLastName(),
-                        request.getEmail(),
-                        request.getPassword(),
-                        request.getPassword(),
-                        Role.USER);
-        User user = userMapper.dtoToEntity(userDTO);
+        request.setRole(Role.USER);
+        User user = userMapper.registrationRequestDTOtoEntity(request);
         String encodedPassword = passwordConfig.passwordEncoder()
-                .encode(userDTO.getPassword());
+                .encode(request.getPassword());
         user.setPassword(encodedPassword);
         boolean userExists = userRepository
-                .findByEmail(userDTO.getEmail())
+                .findByEmail(request.getEmail())
                 .isPresent();
 
         if (userExists) {
             throw new EmailAlreadyTakenException(
-                    EMAIL_ALREADY_TAKEN + userDTO.getEmail(), userDTO);
+                    EMAIL_ALREADY_TAKEN + request.getEmail(), request);
         }
         userRepository.save(user);
         var jwtToken =
-                jwtService.generateToken(userMapper.dtoToEntity(userDTO));
+                jwtService.generateToken(userMapper.registrationRequestDTOtoEntity(request));
         return AuthenticationResponseDTO.builder()
                 .token(jwtToken)
+                .isAuth(false)
                 .build();
     }
 
@@ -72,6 +66,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 jwtService.generateToken(user);
         return AuthenticationResponseDTO.builder()
                 .token(jwtToken)
+                .isAuth(true)
                 .build();
     }
 }

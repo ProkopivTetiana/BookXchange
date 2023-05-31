@@ -1,5 +1,6 @@
 package com.bookxchange.mapper;
 
+import com.bookxchange.dto.RegistrationRequestDTO;
 import com.bookxchange.dto.UserDTO;
 import com.bookxchange.dto.UserSaveDTO;
 import com.bookxchange.model.User;
@@ -19,4 +20,6 @@ public interface UserMapper {
     UserSaveDTO entityToSaveDto(User user);
 
     void updateUser(@MappingTarget User user, UserSaveDTO userSaveDTO);
+
+    User registrationRequestDTOtoEntity(RegistrationRequestDTO request);
 }
