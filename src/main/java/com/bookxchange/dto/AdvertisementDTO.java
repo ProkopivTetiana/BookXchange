@@ -42,4 +42,8 @@ public class AdvertisementDTO {
     @NotNull
     @NotEmpty
     private String userId;
+
+    @NotNull
+    @NotEmpty
+    private String categoryId;
 }
