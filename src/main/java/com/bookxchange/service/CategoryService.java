@@ -16,4 +16,6 @@ public interface CategoryService {
     CategoryDTO addNewCategory(CategoryDTO newCategory);
 
     List<CategoryDTO> getAllCategories();
+
+    List<CategoryDTO> getAllCategoriesByAdvertisementId(String id);
 }

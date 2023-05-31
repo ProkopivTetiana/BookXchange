@@ -40,4 +40,12 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.OK).body(
                 categoryService.getAllCategories());
     }
+
+    @GetMapping("/advertisements/{id}")
+    public ResponseEntity<Iterable<CategoryDTO>> getAllCategoriesByAdvertisementId(
+        @PathVariable String id) {
+        return ResponseEntity.status(HttpStatus.OK).body(
+            categoryService.getAllCategoriesByAdvertisementId(id));
+    }
+
 }
