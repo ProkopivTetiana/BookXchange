@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDate;
 
@@ -28,6 +29,7 @@ public class Advertisement {
     @Column(nullable = false)
     private String description;
 
+    @CreatedDate
     @Column(nullable = false)
     private LocalDate publicationDate;
 
