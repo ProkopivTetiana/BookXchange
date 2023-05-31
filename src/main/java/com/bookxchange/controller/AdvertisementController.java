@@ -78,7 +78,7 @@ public class AdvertisementController {
         @PathVariable String title,
         @PathVariable String userId) {
         return ResponseEntity.status(HttpStatus.OK).body(
-            advertisementService.getAdvertisementByNameAndUserId(title, userId));
+            advertisementService.getAdvertisementByTitleAndUserId(title, userId));
     }
 
 }

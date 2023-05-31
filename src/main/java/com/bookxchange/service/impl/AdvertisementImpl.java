@@ -85,10 +85,10 @@ public class AdvertisementImpl implements AdvertisementService {
     }
 
     @Override
-    public AdvertisementDTO getAdvertisementByNameAndUserId(String title,
+    public AdvertisementDTO getAdvertisementByTitleAndUserId(String title,
         String userId) {
         return advertisementMapper.entityToDto(
-            advertisementRepository.getAdvertisementByNameAndUserId(title, userId));
+            advertisementRepository.getAdvertisementByTitleAndUserId(title, userId));
     }
 
     private void checkThatAdvertisementExists(String id) {
