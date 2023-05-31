@@ -39,7 +39,7 @@ public class AdvertisementController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AdvertisementDTO> updateFootballer(
+    public ResponseEntity<AdvertisementDTO> updateAdvertisement(
             @RequestBody @Validated AdvertisementDTO newAdvertisement,
             @PathVariable String id) {
         return ResponseEntity.status(HttpStatus.OK).body(

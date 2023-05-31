@@ -21,7 +21,6 @@ public class AuthenticationController {
     @PostMapping("/registration")
     public ResponseEntity<AuthenticationResponseDTO> register(
             @RequestBody RegistrationRequestDTO request) {
-        System.out.println("Register _________________________");
         return ResponseEntity.ok(authenticationService.register(request));
     }
 

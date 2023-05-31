@@ -32,6 +32,9 @@ public class Advertisement {
     private LocalDate publicationDate;
 
     @Column(nullable = false)
+    private String bookAuthorFullName;
+
+    @Column(nullable = false)
     private String photo; // todo як правильно фото зберігати в базу даних
 
     @Column(nullable = false)

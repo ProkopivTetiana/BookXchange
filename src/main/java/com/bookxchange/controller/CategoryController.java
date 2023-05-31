@@ -35,14 +35,6 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<CategoryDTO> updateFootballer(
-            @RequestBody @Validated CategoryDTO newCategory,
-            @PathVariable String id) {
-        return ResponseEntity.status(HttpStatus.OK).body(
-                categoryService.updateCategory(newCategory, id));
-    }
-
     @GetMapping
     public ResponseEntity<Iterable<CategoryDTO>> getAllCategories() {
         return ResponseEntity.status(HttpStatus.OK).body(

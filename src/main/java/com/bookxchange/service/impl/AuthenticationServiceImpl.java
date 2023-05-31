@@ -56,7 +56,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         var jwtToken =
                 jwtService.generateToken(userMapper.dtoToEntity(userDTO));
         return AuthenticationResponseDTO.builder()
-                .jwt(jwtToken)
+                .token(jwtToken)
                 .build();
     }
 
@@ -71,7 +71,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         var jwtToken =
                 jwtService.generateToken(user);
         return AuthenticationResponseDTO.builder()
-                .jwt(jwtToken)
+                .token(jwtToken)
                 .build();
     }
 }

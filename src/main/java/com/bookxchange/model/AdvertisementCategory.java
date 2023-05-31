@@ -12,26 +12,19 @@ import org.hibernate.annotations.GenericGenerator;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "BOOK")
+@Table(name = "ADVERTISEMENT_CATEGORY")
 
-public class Book {
+public class AdvertisementCategory {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
 
-    @Column(nullable = false)
-    private String title;
+    @ManyToOne
+    @JoinColumn(name = "category_id", foreignKey = @ForeignKey(name = "fk_category_book"))
+    private Category category;
 
-    @Column(nullable = false)
-    private String authorFullName;
-
-    @Column(nullable = false)
-    private Integer publicationYear;
-
-    @Column(nullable = false)
-    private String description;
-
-    @Column(nullable = false)
-    private String image;
+    @ManyToOne
+    @JoinColumn(name = "advertisement_id", foreignKey = @ForeignKey(name = "fk_advertisement_category"))
+    private Advertisement advertisement;
 }

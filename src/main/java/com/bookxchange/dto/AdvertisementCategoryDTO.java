@@ -10,27 +10,15 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookDTO {
+public class AdvertisementCategoryDTO {
 
     private String id;
 
     @NotNull
     @NotEmpty
-    private String title;
+    private String advertisementId;
 
     @NotNull
     @NotEmpty
-    private String authorFullName;
-
-    @NotNull
-    @NotEmpty
-    private Integer publicationYear;
-
-    @NotNull
-    @NotEmpty
-    private String description;
-
-    @NotNull
-    @NotEmpty
-    private String image;
+    private String categoryId;
 }

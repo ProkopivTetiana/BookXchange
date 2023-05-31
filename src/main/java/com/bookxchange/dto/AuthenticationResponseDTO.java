@@ -10,5 +10,6 @@ import lombok.EqualsAndHashCode;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class AuthenticationResponseDTO {
-    private String jwt; //todo
+    private String token;
+    private Boolean isAuth;
 }
