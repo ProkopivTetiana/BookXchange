@@ -31,7 +31,6 @@ public class AdvertisementDTO {
     @NotEmpty
     private String bookAuthorName;
 
-    @NotNull
     @NotEmpty
     private String photo;
 

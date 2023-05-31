@@ -36,8 +36,8 @@ public class Advertisement {
     @Column(nullable = false)
     private String bookAuthorFullName;
 
-    @Column(nullable = false)
-    private String photo; // todo як правильно фото зберігати в базу даних
+    @Column
+    private String photo;
 
     @Column(nullable = false)
     private Boolean isForever = true;
