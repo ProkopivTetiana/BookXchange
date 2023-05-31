@@ -72,4 +72,13 @@ public class AdvertisementController {
         return ResponseEntity.status(HttpStatus.OK).body(
                 advertisementService.searchAdvertisementsByTitle(title));
     }
+
+    @GetMapping("/{title}/profile/{userId}")
+    public ResponseEntity<AdvertisementDTO> getAdvertisementByNameAndUserId(
+        @PathVariable String title,
+        @PathVariable String userId) {
+        return ResponseEntity.status(HttpStatus.OK).body(
+            advertisementService.getAdvertisementByNameAndUserId(title, userId));
+    }
+
 }

@@ -84,6 +84,13 @@ public class AdvertisementImpl implements AdvertisementService {
                 advertisementRepository.searchAdvertisementsByTitle(title));
     }
 
+    @Override
+    public AdvertisementDTO getAdvertisementByNameAndUserId(String title,
+        String userId) {
+        return advertisementMapper.entityToDto(
+            advertisementRepository.getAdvertisementByNameAndUserId(title, userId));
+    }
+
     private void checkThatAdvertisementExists(String id) {
         if (!advertisementRepository.existsById(id)) {
             throw new EntityNotExistsException(ADVERTISEMENT_NOT_FOUND_BY_ID + id);

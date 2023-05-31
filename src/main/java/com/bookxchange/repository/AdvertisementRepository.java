@@ -19,4 +19,7 @@ public interface AdvertisementRepository extends JpaRepository<Advertisement, St
 
     @Query("SELECT a FROM Advertisement a WHERE a.title LIKE %?1%")
     List<Advertisement> searchAdvertisementsByTitle(String name);
+
+    @Query("SELECT a FROM Advertisement a WHERE a.title = ?1 AND a.user.id = ?2")
+    Advertisement getAdvertisementByTitleAndUserId(String title, String userId);
 }

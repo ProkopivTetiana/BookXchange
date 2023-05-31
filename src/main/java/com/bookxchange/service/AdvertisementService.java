@@ -23,4 +23,6 @@ public interface AdvertisementService {
     List<AdvertisementDTO> getAdvertisementsByUserId(String userId);
 
     List<AdvertisementSearchDTO> searchAdvertisementsByTitle(String title);
+
+    AdvertisementDTO getAdvertisementByNameAndUserId(String title, String userId);
 }
