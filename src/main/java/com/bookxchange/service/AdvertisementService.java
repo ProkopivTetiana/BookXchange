@@ -16,7 +16,7 @@ public interface AdvertisementService {
 
     AdvertisementDTO addNewAdvertisement(AdvertisementDTO newAdvertisement);
 
-    List<AdvertisementDTO> getFiveNewestAdvertisements();
+    List<AdvertisementDTO> getFourNewestAdvertisements();
 
     List<AdvertisementDTO> getAdvertisementsByCategory(String categoryId);
 

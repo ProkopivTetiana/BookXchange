@@ -47,9 +47,9 @@ public class AdvertisementController {
     }
 
     @GetMapping
-    public ResponseEntity<List<AdvertisementDTO>> getFiveNewestAdvertisements() {
+    public ResponseEntity<List<AdvertisementDTO>> getFourNewestAdvertisements() {
         return ResponseEntity.status(HttpStatus.OK).body(
-                advertisementService.getFiveNewestAdvertisements());
+                advertisementService.getFourNewestAdvertisements());
     }
 
     @GetMapping("/categories/{categoryId}")

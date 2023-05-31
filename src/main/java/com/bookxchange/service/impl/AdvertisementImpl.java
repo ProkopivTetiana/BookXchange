@@ -59,9 +59,9 @@ public class AdvertisementImpl implements AdvertisementService {
     }
 
     @Override
-    public List<AdvertisementDTO> getFiveNewestAdvertisements() {
+    public List<AdvertisementDTO> getFourNewestAdvertisements() {
         return advertisementMapper.entitiesToDtos(
-                advertisementRepository.getFiveNewestAdvertisements());
+                advertisementRepository.getFourNewestAdvertisements());
     }
 
     @Override
