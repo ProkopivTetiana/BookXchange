@@ -10,15 +10,20 @@ import java.util.List;
 @Mapper(componentModel = "spring", builder = @Builder(disableBuilder = true), nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface AdvertisementMapper {
 
+
+    @Mapping(target = "category.id", source = "categoryId")
     @Mapping(target = "user.id", source = "userId")
     Advertisement dtoToEntity(AdvertisementDTO advertisementDTO);
 
+    @Mapping(target = "categoryId", source = "category.id")
     @Mapping(target = "userId", source = "user.id")
     AdvertisementDTO entityToDto(Advertisement advertisement);
 
+    @Mapping(target = "categoryId", source = "category.id")
     @Mapping(target = "userId", source = "user.id")
     List<AdvertisementDTO> entitiesToDtos(List<Advertisement> advertisements);
 
+    @Mapping(target = "category.id", source = "categoryId")
     @Mapping(target = "user.id", source = "userId")
     void updateAdvertisement(@MappingTarget Advertisement bookFromDB,
                              AdvertisementDTO newAdvertisement);

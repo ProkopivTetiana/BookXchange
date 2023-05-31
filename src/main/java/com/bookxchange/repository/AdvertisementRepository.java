@@ -11,7 +11,7 @@ public interface AdvertisementRepository extends JpaRepository<Advertisement, St
     @Query("SELECT a FROM Advertisement a ORDER BY a.publicationDate DESC LIMIT 5")
     List<Advertisement> getFiveNewestAdvertisements();
 
-    @Query("SELECT a FROM Advertisement a join AdvertisementCategory bc WHERE bc.category.id = ?1 ORDER BY a.publicationDate DESC")
+    @Query("SELECT a FROM Advertisement a WHERE a.category.id = ?1 ORDER BY a.publicationDate DESC")
     List<Advertisement> getAdvertisementsByCategory(String categoryId);
 
     @Query("SELECT a FROM Advertisement a WHERE a.user.id = ?1 ORDER BY a.publicationDate DESC")

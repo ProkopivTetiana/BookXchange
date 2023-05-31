@@ -43,4 +43,8 @@ public class Advertisement {
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_advertisement_user"))
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", foreignKey = @ForeignKey(name = "fk_advertisement_category"))
+    private Category category;
 }
