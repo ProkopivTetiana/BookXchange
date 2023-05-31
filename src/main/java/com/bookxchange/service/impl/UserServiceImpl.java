@@ -40,5 +40,4 @@ public class UserServiceImpl implements UserService {
     @Override public UserNameDTO getUserNameById(String id) {
         return userRepository.findById(id).map(userMapper::entityToNameDto).orElseThrow(EntityNotExistsException::new);
     }
-
 }
