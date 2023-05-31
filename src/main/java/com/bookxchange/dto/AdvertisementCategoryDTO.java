@@ -17,7 +17,6 @@ public class AdvertisementCategoryDTO {
     @NotNull
     @NotEmpty
     private String advertisementId;
-
     @NotNull
     @NotEmpty
     private String categoryId;
