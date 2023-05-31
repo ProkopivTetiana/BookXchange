@@ -42,7 +42,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/profile/name/{id}")
     public ResponseEntity<UserNameDTO> getUserNameById(@PathVariable @NotNull String id) {
         UserNameDTO user = userService.getUserNameById(id);
         return ResponseEntity.status(HttpStatus.OK).body(user);
