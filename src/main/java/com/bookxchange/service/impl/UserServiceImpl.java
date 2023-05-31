@@ -1,6 +1,7 @@
 package com.bookxchange.service.impl;
 
 import com.bookxchange.dto.UserDTO;
+import com.bookxchange.dto.UserNameDTO;
 import com.bookxchange.dto.UserSaveDTO;
 import com.bookxchange.exception.EntityNotExistsException;
 import com.bookxchange.mapper.UserMapper;
@@ -34,6 +35,10 @@ public class UserServiceImpl implements UserService {
                     userMapper.updateUser(user, userSaveDTO);
                     return userMapper.entityToSaveDto(userRepository.save(user));
                 }).orElseThrow(EntityNotExistsException::new);
+    }
+
+    @Override public UserNameDTO getUserNameById(String id) {
+        return userRepository.findById(id).map(userMapper::entityToNameDto).orElseThrow(EntityNotExistsException::new);
     }
 
 }

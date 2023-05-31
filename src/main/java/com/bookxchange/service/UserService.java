@@ -1,6 +1,7 @@
 package com.bookxchange.service;
 
 import com.bookxchange.dto.UserDTO;
+import com.bookxchange.dto.UserNameDTO;
 import com.bookxchange.dto.UserSaveDTO;
 import org.springframework.stereotype.Service;
 
@@ -10,4 +11,6 @@ public interface UserService {
     UserDTO getUserByEmail(String email);
 
     UserSaveDTO updateUser(UserSaveDTO userSaveDTO);
+
+    UserNameDTO getUserNameById(String id);
 }

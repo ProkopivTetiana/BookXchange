@@ -66,10 +66,10 @@ public class AdvertisementController {
                 advertisementService.getAdvertisementsByUserId(userId));
     }
 
-    @GetMapping("/{name}")
-    public ResponseEntity<List<AdvertisementSearchDTO>> searchAdvertisementsByName(
-            @PathVariable String name) {
+    @GetMapping("/{title}")
+    public ResponseEntity<List<AdvertisementSearchDTO>> searchAdvertisementsByTitle(
+            @PathVariable String title) {
         return ResponseEntity.status(HttpStatus.OK).body(
-                advertisementService.searchAdvertisementsByName(name));
+                advertisementService.searchAdvertisementsByTitle(title));
     }
 }

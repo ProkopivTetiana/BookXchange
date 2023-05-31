@@ -17,6 +17,6 @@ public interface AdvertisementRepository extends JpaRepository<Advertisement, St
     @Query("SELECT a FROM Advertisement a WHERE a.user.id = ?1 ORDER BY a.publicationDate DESC")
     List<Advertisement> getAdvertisementsByUserId(String userId);
 
-    @Query("SELECT a FROM Advertisement a WHERE a.name LIKE %?1%")
-    List<Advertisement> searchAdvertisementsByName(String name);
+    @Query("SELECT a FROM Advertisement a WHERE a.title LIKE %?1%")
+    List<Advertisement> searchAdvertisementsByTitle(String name);
 }

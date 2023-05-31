@@ -1,6 +1,7 @@
 package com.bookxchange.controller;
 
 import com.bookxchange.dto.UserDTO;
+import com.bookxchange.dto.UserNameDTO;
 import com.bookxchange.dto.UserSaveDTO;
 import com.bookxchange.service.UserService;
 import jakarta.validation.constraints.NotNull;
@@ -37,6 +38,12 @@ public class UserController {
     @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     public ResponseEntity<UserSaveDTO> updateUser(UserSaveDTO userSaveDTO) {
         UserSaveDTO user = userService.updateUser(userSaveDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserNameDTO> getUserNameById(@NotNull String id) {
+        UserNameDTO user = userService.getUserNameById(id);
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 }

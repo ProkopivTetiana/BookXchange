@@ -23,7 +23,7 @@ public class Advertisement {
     private String id;
 
     @Column(nullable = false)
-    private String name;
+    private String title;
 
     @Column(nullable = false)
     private String description;

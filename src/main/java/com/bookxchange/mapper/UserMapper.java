@@ -2,6 +2,7 @@ package com.bookxchange.mapper;
 
 import com.bookxchange.dto.RegistrationRequestDTO;
 import com.bookxchange.dto.UserDTO;
+import com.bookxchange.dto.UserNameDTO;
 import com.bookxchange.dto.UserSaveDTO;
 import com.bookxchange.model.User;
 import org.mapstruct.Builder;
@@ -22,4 +23,6 @@ public interface UserMapper {
     void updateUser(@MappingTarget User user, UserSaveDTO userSaveDTO);
 
     User registrationRequestDTOtoEntity(RegistrationRequestDTO request);
+
+    UserNameDTO entityToNameDto(User user);
 }

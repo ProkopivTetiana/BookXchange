@@ -17,7 +17,7 @@ public class AdvertisementDTO {
 
     @NotNull
     @NotEmpty
-    private String name;
+    private String title;
 
     @NotNull
     @NotEmpty
