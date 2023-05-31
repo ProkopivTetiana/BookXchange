@@ -29,15 +29,15 @@ public class AdvertisementDTO {
 
     @NotNull
     @NotEmpty
+    private String bookAuthorName;
+
+    @NotNull
+    @NotEmpty
     private String photo;
 
     @NotNull
     @NotEmpty
     private Boolean isForever;
-
-    @NotNull
-    @NotEmpty
-    private String bookId;
 
     @NotNull
     @NotEmpty

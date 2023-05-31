@@ -41,10 +41,6 @@ public class Advertisement {
     private Boolean isForever = true;
 
     @ManyToOne
-    @JoinColumn(name = "book_id", foreignKey = @ForeignKey(name = "fk_advertisement_book"))
-    private Book book;
-
-    @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_advertisement_user"))
     private User user;
 }
