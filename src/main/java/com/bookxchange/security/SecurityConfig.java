@@ -35,7 +35,7 @@ public class SecurityConfig {
             .authorizeHttpRequests()
             .requestMatchers("/api/v*/auth/**", "/api/v*/profile/name/*",
                 "/api/v*/advertisements", "/api/v*/advertisements/categories/*",
-                "/api/v*/advertisements/profile/*", "/api/v*/advertisements/*",
+                "/api/v*/advertisements/profile/*", "/api/v*/advertisements/**",
                 "/api/v*/categories", "/api/v*/categories/*")
             .permitAll()
             .anyRequest()

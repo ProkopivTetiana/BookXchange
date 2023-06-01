@@ -66,7 +66,7 @@ public class AdvertisementController {
                 advertisementService.getAdvertisementsByUserId(userId));
     }
 
-    @GetMapping("/{title}")
+    @GetMapping("/search/{title}")
     public ResponseEntity<List<AdvertisementSearchDTO>> searchAdvertisementsByTitle(
             @PathVariable String title) {
         return ResponseEntity.status(HttpStatus.OK).body(
@@ -80,5 +80,4 @@ public class AdvertisementController {
         return ResponseEntity.status(HttpStatus.OK).body(
             advertisementService.getAdvertisementByTitleAndUserId(title, userId));
     }
-
 }
