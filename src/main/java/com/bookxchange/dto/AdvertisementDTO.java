@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 import java.time.LocalDate;
 
 @Data
@@ -23,9 +25,11 @@ public class AdvertisementDTO {
     @NotEmpty
     private String description;
 
+    private LocalDate publicationDate;
+
     @NotNull
-    @NotEmpty
-    private LocalDate publicationYear;
+    @Positive
+    private Integer publicationYear;
 
     @NotNull
     @NotEmpty

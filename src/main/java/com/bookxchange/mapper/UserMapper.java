@@ -20,8 +20,6 @@ public interface UserMapper {
 
     UserSaveDTO entityToSaveDto(User user);
 
-    void updateUser(@MappingTarget User user, UserSaveDTO userSaveDTO);
-
     User registrationRequestDTOtoEntity(RegistrationRequestDTO request);
 
     UserNameDTO entityToNameDto(User user);

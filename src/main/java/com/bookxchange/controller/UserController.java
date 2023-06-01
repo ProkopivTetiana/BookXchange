@@ -9,6 +9,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,7 +41,7 @@ public class UserController {
     @PatchMapping(path = "/profile/{id}")
     @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     public ResponseEntity<UserSaveDTO> updateUser(
-        @PathVariable @NotNull String id, UserSaveDTO userSaveDTO) {
+        @PathVariable @NotNull String id, @RequestBody UserSaveDTO userSaveDTO) {
         UserSaveDTO user = userService.updateUser(id, userSaveDTO);
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
