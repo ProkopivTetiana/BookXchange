@@ -3,6 +3,8 @@ package com.bookxchange.controller;
 import com.bookxchange.dto.AdvertisementDTO;
 import com.bookxchange.dto.AdvertisementSearchDTO;
 import com.bookxchange.service.AdvertisementService;
+import com.fasterxml.jackson.databind.JsonNode;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -66,11 +68,13 @@ public class AdvertisementController {
                 advertisementService.getAdvertisementsByUserId(userId));
     }
 
-    @GetMapping("/search/{title}")
+    @GetMapping("/search")
     public ResponseEntity<List<AdvertisementSearchDTO>> searchAdvertisementsByTitle(
-            @PathVariable String title) {
+        @RequestBody JsonNode requestBody) {
+        String title = requestBody.get("title").asText();
+
         return ResponseEntity.status(HttpStatus.OK).body(
-                advertisementService.searchAdvertisementsByTitle(title));
+            advertisementService.searchAdvertisementsByTitle(title));
     }
 
     @GetMapping("/{title}/profile/{userId}")

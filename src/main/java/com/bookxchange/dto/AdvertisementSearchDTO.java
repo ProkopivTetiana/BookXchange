@@ -16,5 +16,5 @@ public class AdvertisementSearchDTO {
 
     @NotNull
     @NotEmpty
-    private String name;
+    private String title;
 }
