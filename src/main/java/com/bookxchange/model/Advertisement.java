@@ -40,7 +40,7 @@ public class Advertisement {
     private String photo;
 
     @Column(nullable = false)
-    private Boolean isForever = true;
+    private String time;
 
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_advertisement_user"))

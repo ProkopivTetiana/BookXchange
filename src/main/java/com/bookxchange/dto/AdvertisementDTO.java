@@ -36,7 +36,7 @@ public class AdvertisementDTO {
 
     @NotNull
     @NotEmpty
-    private Boolean isForever;
+    private String time;
 
     @NotNull
     @NotEmpty
