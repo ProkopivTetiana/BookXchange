@@ -1,5 +1,7 @@
 package com.bookxchange.service;
 
+import java.util.List;
+
 import com.bookxchange.dto.UserDTO;
 import com.bookxchange.dto.UserNameDTO;
 import com.bookxchange.dto.UserSaveDTO;
@@ -13,4 +15,6 @@ public interface UserService {
     UserSaveDTO updateUser(String id, UserSaveDTO userSaveDTO);
 
     UserNameDTO getUserNameById(String id);
+
+    List<UserDTO> getAllUsers();
 }

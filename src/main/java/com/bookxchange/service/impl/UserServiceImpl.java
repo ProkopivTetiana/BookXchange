@@ -1,5 +1,7 @@
 package com.bookxchange.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +44,10 @@ public class UserServiceImpl implements UserService {
     @Override public UserNameDTO getUserNameById(String id) {
         return userRepository.findById(id).map(userMapper::entityToNameDto)
             .orElseThrow(EntityNotExistsException::new);
+    }
+
+    @Override public List<UserDTO> getAllUsers() {
+        return userMapper.entitiesToDtos(userRepository.findAll());
     }
 
     User updateUser(User user, UserSaveDTO userSaveDTO) {

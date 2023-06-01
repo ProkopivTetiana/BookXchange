@@ -1,5 +1,7 @@
 package com.bookxchange.mapper;
 
+import java.util.List;
+
 import com.bookxchange.dto.RegistrationRequestDTO;
 import com.bookxchange.dto.UserDTO;
 import com.bookxchange.dto.UserNameDTO;
@@ -23,4 +25,6 @@ public interface UserMapper {
     User registrationRequestDTOtoEntity(RegistrationRequestDTO request);
 
     UserNameDTO entityToNameDto(User user);
+
+    List<UserDTO> entitiesToDtos(List<User> all);
 }
