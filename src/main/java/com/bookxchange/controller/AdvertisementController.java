@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/advertisement")
+@RequestMapping("/api/v1/advertisements")
 @RequiredArgsConstructor
 public class AdvertisementController {
 
