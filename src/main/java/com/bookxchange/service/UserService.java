@@ -10,7 +10,7 @@ public interface UserService {
 
     UserDTO getUserByEmail(String email);
 
-    UserSaveDTO updateUser(UserSaveDTO userSaveDTO);
+    UserSaveDTO updateUser(String id, UserSaveDTO userSaveDTO);
 
     UserNameDTO getUserNameById(String id);
 }
