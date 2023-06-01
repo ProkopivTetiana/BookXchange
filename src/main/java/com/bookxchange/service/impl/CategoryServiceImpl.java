@@ -67,6 +67,12 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryMapper.entitiesToDtos(categoryRepository.findAllByAdvertisementId(id));
     }
 
+    @Override
+    public List<CategoryDTO> addNewCategories(List<CategoryDTO> categories) {
+        return categoryMapper.entitiesToDtos(categoryRepository.saveAll(
+            categoryMapper.dtosToEntities(categories)));
+    }
+
     private void checkThatCategoryExists(String id) {
         if (!categoryRepository.existsById(id)) {
             throw new EntityNotExistsException(CATEGORY_NOT_FOUND_BY_ID + id);

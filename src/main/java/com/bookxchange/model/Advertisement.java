@@ -31,7 +31,7 @@ public class Advertisement {
 
     @CreatedDate
     @Column(nullable = false)
-    private LocalDate publicationDate;
+    private LocalDate publicationYear;
 
     @Column(nullable = false)
     private String bookAuthorFullName;

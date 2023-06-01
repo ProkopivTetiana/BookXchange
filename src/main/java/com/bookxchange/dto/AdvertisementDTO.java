@@ -25,11 +25,11 @@ public class AdvertisementDTO {
 
     @NotNull
     @NotEmpty
-    private LocalDate publicationDate;
+    private LocalDate publicationYear;
 
     @NotNull
     @NotEmpty
-    private String bookAuthorName;
+    private String bookAuthorFullName;
 
     @NotEmpty
     private String photo;

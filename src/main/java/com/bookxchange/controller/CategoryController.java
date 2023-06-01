@@ -1,5 +1,7 @@
 package com.bookxchange.controller;
 
+import java.util.List;
+
 import com.bookxchange.dto.CategoryDTO;
 import com.bookxchange.service.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -47,4 +49,12 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.OK).body(
             categoryService.getAllCategoriesByAdvertisementId(id));
     }
+
+    @PostMapping("/all")
+    public ResponseEntity<List<CategoryDTO>> addNewCategories(
+        @RequestBody List<CategoryDTO> categories) {
+        return ResponseEntity.status(HttpStatus.OK).body(
+            categoryService.addNewCategories(categories));
+    }
+
 }

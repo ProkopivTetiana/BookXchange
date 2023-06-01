@@ -8,13 +8,13 @@ import java.util.List;
 
 public interface AdvertisementRepository extends JpaRepository<Advertisement, String> {
 
-    @Query("SELECT a FROM Advertisement a ORDER BY a.publicationDate DESC LIMIT 4")
+    @Query("SELECT a FROM Advertisement a ORDER BY a.publicationYear DESC LIMIT 4")
     List<Advertisement> getFourNewestAdvertisements();
 
-    @Query("SELECT a FROM Advertisement a WHERE a.category.id = ?1 ORDER BY a.publicationDate DESC")
+    @Query("SELECT a FROM Advertisement a WHERE a.category.id = ?1 ORDER BY a.publicationYear DESC")
     List<Advertisement> getAdvertisementsByCategory(String categoryId);
 
-    @Query("SELECT a FROM Advertisement a WHERE a.user.id = ?1 ORDER BY a.publicationDate DESC")
+    @Query("SELECT a FROM Advertisement a WHERE a.user.id = ?1 ORDER BY a.publicationYear DESC")
     List<Advertisement> getAdvertisementsByUserId(String userId);
 
     @Query("SELECT a FROM Advertisement a WHERE a.title LIKE %?1%")

@@ -18,4 +18,6 @@ public interface CategoryService {
     List<CategoryDTO> getAllCategories();
 
     List<CategoryDTO> getAllCategoriesByAdvertisementId(String id);
+
+    List<CategoryDTO> addNewCategories(List<CategoryDTO> categories);
 }
