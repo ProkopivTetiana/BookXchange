@@ -69,7 +69,7 @@ public class AdvertisementController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<AdvertisementSearchDTO>> searchAdvertisementsByTitle(
+    public ResponseEntity<List<AdvertisementDTO>> searchAdvertisementsByTitle(
         @RequestBody JsonNode requestBody) {
         String title = requestBody.get("title").asText();
 

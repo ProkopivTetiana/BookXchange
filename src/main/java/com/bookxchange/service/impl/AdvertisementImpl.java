@@ -79,9 +79,9 @@ public class AdvertisementImpl implements AdvertisementService {
     }
 
     @Override
-    public List<AdvertisementSearchDTO> searchAdvertisementsByTitle(String title) {
-        return advertisementMapper.entitiesToSearchDtos(
-                advertisementRepository.searchAdvertisementsByTitle(title));
+    public List<AdvertisementDTO> searchAdvertisementsByTitle(String title) {
+        return advertisementMapper.entitiesToDtos(
+                advertisementRepository.searchAdvertisementsByTitle(title.toLowerCase()));
     }
 
     @Override

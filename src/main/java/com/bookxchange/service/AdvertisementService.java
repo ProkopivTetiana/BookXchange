@@ -22,7 +22,7 @@ public interface AdvertisementService {
 
     List<AdvertisementDTO> getAdvertisementsByUserId(String userId);
 
-    List<AdvertisementSearchDTO> searchAdvertisementsByTitle(String title);
+    List<AdvertisementDTO> searchAdvertisementsByTitle(String title);
 
     AdvertisementDTO getAdvertisementByTitleAndUserId(String title, String userId);
 }
